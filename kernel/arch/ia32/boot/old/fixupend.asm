@@ -1,0 +1,3 @@
+/* -*- fundamental -*- */
+global fixupend:
+fixupend:

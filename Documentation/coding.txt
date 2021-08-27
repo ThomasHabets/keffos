@@ -1,0 +1,40 @@
+$Id: coding.txt,v 1.2 2001/05/31 21:32:20 marvin Exp $
+
+----------------------
+How to program keffos:
+----------------------
+* Coding style is K&R with 8-space indent.
+* Anyone writing GNU-style will be hunted down and shot.
+* Never ever use sti() unless you know why you shouldn't (which you don't).
+  If you need exclusive access to something you should use semaphores,
+  and if you *really* need to disable interrupts you should do it like this:
+  int flags; save_regs(flags); cli();
+  [ code ]
+  restore_regs(flags);
+* Errors are returned with the negative errno. Like this:
+  return -(errno = ENOSYS);
+  if unsigned number or pointer normally returns, return 0 and set errno.
+
+-----------------
+Applying patches:
+-----------------
+$ ls -l
+drwxrwx---   9 loser    loser        1024 Feb 20 01:37 keffos
+$ gunzip < keffos-x.y.z.patch.gz | patch -p0
+$
+
+---------------
+Making patches:
+---------------
+First (important) go into both dirs and make mrproper.
+
+keffos is the new (modified) one, keffos-0.0.1 is the old
+Yes, the names matter, and yes the order for diff matters.
+(Gimme a break, I just learned how to do it myself)
+
+$ ls -l
+total 2
+drwxrwx---   9 loser    loser        1024 Feb 20 01:37 keffos
+drwxrwx---   9 loser    loser        1024 Feb 20 01:37 keffos-0.0.1
+$ diff -Nur keffos-0.0.1 keffos | gzip -9 > keffos-0.0.1.my_mod.patch.gz
+$ 

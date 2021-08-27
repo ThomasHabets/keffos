@@ -1,0 +1,16 @@
+! $Id: config.h.in,v 1.2 2001/05/31 21:32:21 marvin Exp $
+!
+! config.h.in for kernel
+! These are comments FYI
+!
+! Also, as you might have guessed, this is the first draft
+! of config.h.in, which sucks compared to how the second one
+! will be.
+!
+#define CONFIG_KERNEL_DEBUG 1
+#define CONFIG_KERNEL_SCREEN_80x50 1
+#define CONFIG_KERNEL_SIGNATURE 'Keff'
+#define CONFIG_RAMDRIVE_SIGNATURE 'KoRD'
+#define COMPILER_HAS_MEMSET 0
+#define COMPILER_HAS_MEMSETW 0
+#define COMPILER_HAS_MEMCPY 0

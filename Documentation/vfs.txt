@@ -1,0 +1,31 @@
+$Id: vfs.txt,v 1.2 2001/05/31 21:32:20 marvin Exp $
+
+VFS System:
+
+Files (file_t) are just pointers to inodes (inode_t).
+
+open():
+vfs:
+ * Check which mounted device the file is on
+ * strip path to that mountpoint (/home/foo -> foo)
+ * find fs driver for device
+fs driver:
+ * get inode for file
+ * check permission to open is requested mode
+ * mark dentry (see below) as in-use
+vfs:
+ * create file structure (open_file_t)
+ * increment mounted device usage count
+
+close():
+vfs:
+ * find dentry
+fs:
+ * sync (not below blockdevice-level)
+vfs:
+ * mark dentry as not in-use
+ * mark dentry last used
+
+Since getting the inode can take a while (even with block-level cache) a
+dentry (dentry_t) is used to cache file -> inode translations. This also
+avoids the first three steps in the vfs layer (device & fs driver).

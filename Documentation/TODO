@@ -1,0 +1,14 @@
+$Id: TODO,v 1.2 2001/05/31 21:32:20 marvin Exp $
+
+Just short-term objectives here.
+For long-term, see ideas.txt.
+
+* make kernel load elf-modules
+* add magic to all structs
+* start malloc()ing memory right after end of kernel
+* handle parameters (from boot)
+* keyboard handler (a module)
+* parse cmdline in second stage loader (for non-keffos boot)
+* Make real config program
+
+#----------------------#

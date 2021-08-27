@@ -1,0 +1,14 @@
+# $Id: architectures,v 1.2 2001/05/31 21:32:20 marvin Exp $
+#
+# Architecture translation from uname -m
+# (do not write architecture names in comments)
+#
+i8086 ia16
+i8186 ia16
+i8286 ia16
+i386 ia32
+i486 ia32
+i586 ia32
+i686 ia32
+21164 alpha
+21264 alpha

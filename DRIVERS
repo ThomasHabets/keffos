@@ -1,0 +1,62 @@
+#
+# $Id: DRIVERS,v 1.2 2001/05/31 21:32:20 marvin Exp $
+#
+# This file contains information for the making process,
+# unlike the config.h files which contain info when compiling.
+#
+
+#
+# Block devices (ide, floppy)
+#
+DRIVER_BLOCK=n
+DRIVER_BLOCK_IDE=y
+#DRIVER_BLOCK_FLOPPY=y
+
+#
+# Character devices (serial, parport)
+#
+#DRIVER_CHAR=y
+#DRIVER_CHAR_SERIAL=y
+#DRIVER_CHAR_PARPORT=y
+
+#
+# Framebuffer drivers
+#
+#DRIVER_FB=y
+#DRIVER_FB_VESA1=y
+#DRIVER_FB_VESA2=y
+#DRIVER_FB_VESA3=y
+
+#
+# Network devices (NICs)
+#
+#DRIVER_NETDEV=y
+#DRIVER_NETDEV_3C5x9=y
+#DRIVER_NETDEV_NE2k=y
+
+#
+# Sound devices
+#
+#DRIVER_SOUND=y
+#DRIVER_SOUND_SB=y
+#DRIVER_SOUND_GUS=y
+
+######################
+# Soft drivers below #
+######################
+
+#
+# File systems
+#
+DRIVER_FS=n
+DRIVER_FS_KEFFS=y
+#DRIVER_FS_EXT2=y
+#DRIVER_FS_VFAT=y
+
+#
+# Network
+#
+#DRIVER_NET=y
+#DRIVER_NET_IPv4=y
+#DRIVER_NET_IPv6=y
+#DRIVER_NET_IPX=y

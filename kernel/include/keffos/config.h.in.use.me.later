@@ -1,0 +1,11 @@
+# $Id: config.h.in.use.me.later,v 1.2 2001/05/31 21:32:21 marvin Exp $
+#
+section CPU
+choice Vendor x86|alpha|sparc CPU_TYPE
+if CPU_TYPE = x86
+  choice Processor 386|486|Pentium|PentiumPro|PentiumII|PentiumIII|K6|K6-2|K6-3 PROCESSOR "Select you processor"
+elif CPU_TYPE = alpha
+  choice Processor type1|type2|type3 PROCESSOR "Select your processor"
+elif CPU_TYPE = sparc
+  choice Processor Type1|Type2|Type3 PROCESSOR "Select your processor"
+fi

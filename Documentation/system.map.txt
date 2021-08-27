@@ -1,0 +1,12 @@
+$Id: system.map.txt,v 1.2 2001/05/31 21:32:20 marvin Exp $
+
+System.map file
+
+.<control-word> [ parameters ] ...
+<addr> <symbol>
+
+Control words:
+.text		code symbols     param0 = start of code mem param2 = size of code mem
+.data           data symbols     same as above
+.rodata         read-only data   same as above
+.bss            unallocated data same as above

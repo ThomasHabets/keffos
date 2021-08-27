@@ -1,0 +1,18 @@
+# $Id: netwrapper.conf.draft,v 1.2 2001/05/31 21:32:23 marvin Exp $
+#
+#service user     group    /chroot          calls/sec max_simul program parameters
+#
+
+finger   nobody   nogroup  /                2         10        /usr/sbin/fingerd
+smtp     mail     mail     /                2         10        /usr/sbin/smtpd
+pop3     mail     mail     /var/spool/mail  2         10        /usr/sbin/pop3d
+telnet   root     root     /                1         10        /usr/sbin/telnetd
+
+
+#
+#cmd service hosts/networks               options
+#
+deny finger  192.168.51.0/24,@evil.com    log,portscan
+deny *       @microsoft.com               log
+deny pop3    *                            log,nuke
+accept pop3  client0.com,client1.com

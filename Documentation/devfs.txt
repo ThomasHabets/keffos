@@ -1,0 +1,48 @@
+#
+# Thomas Habets         1999-10-20 (0.0.1)      Added this comment
+#
+
+Block devices also create devices for each partition.
+example:
+/dev/scsi0/hd0a
+/dev/ide0/rwr0d
+
+/dev filesystems:
+
+/dev/scsi<n>/		# <n>:th scsi adapter
+hd<n>			# hd at id <n>
+cd<n>			# cdrom at id <n>
+sg<n>			# other at id <n>
+
+/dev/ide<n>/		# <n>:th ide channel
+hd<a>			# hd
+cd<a>			# cd
+rwr<a>			# rw-removable (zipdrives, etc..)
+
+/dev/fd<n>		# floppy
+
+/dev/{null,zero,full}	# normal
+
+/dev/pty/[0-9]*		# tty devices
+
+/dev/ttyS<n>		# serial devices
+
+/dev/lp<n>		# paralell devices
+
+/dev/raid<n>		# software raid disks
+
+/dev/nd<n>		# network block device
+
+/dev/fd/num		# file descriptors
+
+/dev/{audio,dsp,mixer,midi}	# sound
+
+/dev/{kmem,mem}		# memory
+
+/dev/loop<n>		# loopback devices
+
+/dev/ps2		# ps2
+
+/dev/ram<n>		# ramdisks
+
+/dev/{u,}random		# random

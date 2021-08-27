@@ -1,0 +1,64 @@
+$Id: mm.txt,v 1.2 2001/05/31 21:32:20 marvin Exp $
+
+KeffOS
+
+Kernel memory manager
+
+Design
+---
+	Goals:
+	 * kmalloc() fast for commonly-used sizes
+	 * not waste memory
+	 * avoid fragmentation
+
+Current implementation
+---
+	Uses hashtable for fast return of previosly requested sizes.
+	Uses size + sizeof(mm_block_t) bytes per allocation.
+	Uncached memory is always defragmented.
+
+Types of memory:
+---
+
+unallocated
+	Memory that has never been allocated (with an exception, keep reading)
+	and is therefore "wasted". This memory is mapped with a linked list
+	called mm_unallocated_blocks. It must NEVER be fragmented.
+
+allocated
+	Blocks that are in the memory cache. There are two types of
+	allocated blocks with each having a .state.
+	Allocated memmory is mapped in mm_hashtable[] hashed by block size.
+
+	free (MM_STATE_FREE)
+	-
+	Allocated memory that is not used anywhere at the moment.
+	IOW: memory that has been malloc()ed and then free()ed.
+
+	A free block is returned to the unallocated pool after being
+	"unwanted" for a certain time. A separate process is handling
+	the return of blocks to the unallocated pool (not yet).
+
+	used (MM_STATE_USED)
+	-
+	Allocated memory that has been malloc()ed and not yet free()d.
+	When free()d, the block gets .state = MM_STATE_FREE and a ttl.
+	
+Allocating:
+---
+kmalloc()
+	malloc() first checks to see if there is any block of the exact
+	requested size in the block cache. If that fails, it checks the
+	unallocated pool for memory that is equal or more to the requested
+	size. If that also fails, it checks if defragmenting will help
+	(unallocated and allocated) (this last step is not done).
+	If all else fails, return NULL.
+
+kfree() (not done)
+	Searches linked list of blocks that are availible to find the size
+	of the block requested to be free()d. Then marks the block as
+	.state = MM_STATE_FREE and gives it a ttl.
+
+Allocating memory
+	When an unallocated block is allocated, sizeof(mm_block_t) is added
+	to the size of it, because of the chicken-and-egg problem.

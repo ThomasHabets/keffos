@@ -1,0 +1,10 @@
+name KefFS utils
+version 1.0
+author Thomas Habets <thomas@habets.pp.se>
+depends libc 1.0
+makeinclude 
+install 755 mkkeffs /sbin/mkkefs
+install 755 binfile2 /sbin/dumpkeffs
+info
+User-level programs for handling KefFS file systems.
+.

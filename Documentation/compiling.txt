@@ -1,0 +1,18 @@
+#
+# Thomas Habets         1999-10-20 (0.0.1)      Added this comment
+#
+
+Compiling the kernel
+
+First time:
+tar fzx keffos-x.y.z.tar.gz		# Unzips the kernel
+cd keffos
+make mrproper				# cleans out old config files that
+					#  were not supposed to be there in
+					#  the first place.
+
+Every time:
+make config				# config drivers and stuff
+make clean				# clean old obj files
+make
+make disc				# don't forget to put in floppy

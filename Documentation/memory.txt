@@ -1,0 +1,37 @@
+$Id: memory.txt,v 1.2 2001/05/31 21:32:20 marvin Exp $
+
+-----------------
+ Physical memory
+-----------------
+
+0x0	 -	0x10000	        GDT
+0x7C00	 -	 0x7E00	        initial boot (overwritten by GDT)
+0x10000	 -	0x10200	        boot sector (overwritten by IDT)
+0x10000	 -	0x10800	        IDT
+0x10800  -      0x11000         parameters (2,048 bytes)
+0x11000  -      0x12000         Page directory
+0x12000  -      0x13000         'init' process page table 0x0 (0x0 -> 4M)
+0x13000  -      0x14000         page table 0x300 (same for all tasks)
+				(0xC0000000 -> 0xC0400000)
+0x14000  -      0x20000         -
+0x20000  -      0x30000         DMA scratch pool
+0x30000	 -      0x70000         kernel (262,144 bytes)
+0x70000  -      0x80000         ramdrive (65,536 bytes)
+0x80000	 -            x	        kernel loader (65,536 bytes)   FIXME: use as dynamic memory
+0x90000	 -      0xA0000	        - (65,536 bytes)
+0xA0000  -     0x100000         BIOS area
+
+If availible:
+0x100000  -   0x1000000        Reserve some DMA pools (1-16 MB area)
+0x1000000 -                    Dynamic memory
+
+---------------
+ Linear memory
+---------------
+Process view:
+0x0         -   0x10000           Parameters for process (64k)
+0x10000     -   0x40000000        Shared libraries (1 GB - 64k)
+0x40000000  -   0xC0000000        Program code/data (2 GB)
+0xC0000000  -   0xFFFFFFFF        Physical memory and kernel memory (1 GB)
+
+LDT describtors allocatable if more memory is needed.

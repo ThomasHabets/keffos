@@ -1,0 +1,16 @@
+$Id: ideas.txt,v 1.2 2001/05/31 21:32:20 marvin Exp $
+
+Packets sent layer-to-layer with linked list of constant size
+(about 128 - 1k)
+Add header by setting newroot = header,
+and newroot->next = oldroot
+(page 33 in max's book)
+
+
+or...
+
+mix large and small buffers.
+allocated when first needed and not freed.
+be able to generate stats and free old buffers.
+(protocol independant).
+

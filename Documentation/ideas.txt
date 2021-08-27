@@ -1,0 +1,15 @@
+$Id: ideas.txt,v 1.2 2001/05/31 21:32:20 marvin Exp $
+
+* Make at least CS != DS (maybe, need non-binary for that)
+* BSD 4.4 security levels ([0] page 274)
+* Capabilities
+* immutable and append-only files ([0] page 273)
+* bindfmt_misc
+* /dev & /proc virtual
+* logo (in ramdrive w/ mode13h)
+* nbd
+* IP: ttl decrease by seconds in que? (recheck RFC)
+* RDOFF format for modules? (gcc -> rdoff, how?)
+* show last successful and last failed login on login
+
+[0] Practical UNIX and internet security (2:nd ed)

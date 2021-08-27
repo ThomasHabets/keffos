@@ -1,0 +1,25 @@
+#
+# Thomas Habets         1999-10-20 (0.0.1)      Added this comment
+#
+Two separate debuggers (as modules):
+
+#------------------------------------#
+debug:
+    When a program crashes, a user-configurable program is
+    run for debugging.
+
+#------------------------------------#
+kdebug:
+    if kernel panics, kdebug is run and enters kernel debugging
+    mode.
+    
+    The debugger can be big because the kernel doesn't have to
+    have it loaded all the time and there is no loss if it is
+    buggy because let's face it, the kernel just crashed.
+
+    This should only be used to retrieve important data
+    that is in memory at the time of the crash.
+
+kdebug> 
+
+See kernel/kernel/kdebug.c for commands.

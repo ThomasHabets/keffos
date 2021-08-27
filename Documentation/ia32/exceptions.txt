@@ -1,0 +1,26 @@
+$Id: exceptions.txt,v 1.1 2001/05/31 21:32:20 marvin Exp $
+
+Exceptions on the ia32
+
+Exception: Function:
+(hex)	 
+--------------------------
+0	   Divide error
+1	   Debug exception
+2	   Nonmaskable interrupt
+3	   Breakpoint
+4	   overflow
+5	   bounds check
+6	   invalid opcode
+7	   Coprocessor not availible
+8	   Double fault
+9	   (reserved)
+A	   Invalid TSS
+B	   Segment not present
+D	   Stack exception
+C	   General protection
+E	   Page fault
+F	   (reserved)
+10	   Coprocessor error
+11-1F	   (reserved)
+20-FF	   Availible for external interrupts via INTR pin

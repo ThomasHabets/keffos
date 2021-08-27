@@ -1,0 +1,757 @@
+
+Allocating common symbols
+Common symbol       size              file
+
+km_unallocated_blocks
+                    0x14              mm/kmm.o
+fs_ramdrive         0x4c              kernel/main.o
+tasks               0x84              kernel/timer.o
+kdebug_pos          0x4               kernel/kdebug.o
+processlist         0x1b8             kernel/timer.o
+kdebug_kbdone       0x1               kernel/kdebug.o
+keyb_buffer         0x100             kernel/main.o
+nullprocess         0x2c              kernel/timer.o
+kdebug_kbbuf        0x4               kernel/kdebug.o
+km_hashtable        0xa00             mm/kmm.o
+km_free_blocks_mutex
+                    0x4               mm/kmm.o
+processcount        0x4               kernel/timer.o
+kernel_symbols      0x18              kernel/main.o
+km_hashtable_mutex  0x4               mm/kmm.o
+
+Discarded input sections
+
+ .note.GNU-stack
+                0x0000000000000000        0x0 arch/ia32/kernel/console.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 arch/ia32/kernel/cpuid.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 arch/ia32/kernel/exception.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 arch/ia32/kernel/int.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 arch/ia32/kernel/setup.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 arch/ia32/kernel/shutdown.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 arch/ia32/lib/bios.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 arch/ia32/mm/paging.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 kernel/main.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 kernel/ramdrive.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 kernel/vfs.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 kernel/module.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 kernel/init.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 kernel/kdebug.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 kernel/klog.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 kernel/mutex.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 kernel/symbols.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 kernel/syscall.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 kernel/timer.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 lib/ctype.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 lib/errno.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 lib/stdio.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 lib/string.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 lib/checksum.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 lib/vsnprintf.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 mm/mm.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 mm/kmm.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+Address of section .text set to 0xc0030000
+LOAD arch/ia32/boot/start.o
+LOAD arch/ia32/kernel/console.o
+LOAD arch/ia32/kernel/cpuid.o
+LOAD arch/ia32/kernel/exception.o
+LOAD arch/ia32/kernel/int.o
+LOAD arch/ia32/kernel/inthandlers.o
+LOAD arch/ia32/kernel/kdebug_s.o
+LOAD arch/ia32/kernel/setup.o
+LOAD arch/ia32/kernel/shutdown.o
+LOAD arch/ia32/kernel/syscall.o
+LOAD arch/ia32/lib/bios.o
+LOAD arch/ia32/mm/paging.o
+LOAD kernel/main.o
+LOAD kernel/ramdrive.o
+LOAD kernel/vfs.o
+LOAD kernel/module.o
+LOAD kernel/init.o
+LOAD kernel/kdebug.o
+LOAD kernel/klog.o
+LOAD kernel/mutex.o
+LOAD kernel/symbols.o
+LOAD kernel/syscall.o
+LOAD kernel/timer.o
+LOAD lib/ctype.o
+LOAD lib/errno.o
+LOAD lib/stdio.o
+LOAD lib/string.o
+LOAD lib/checksum.o
+LOAD lib/vsnprintf.o
+LOAD mm/mm.o
+LOAD mm/kmm.o
+                0x0000000008048000                PROVIDE (__executable_start, 0x8048000)
+                0x0000000008048094                . = (0x8048000 + SIZEOF_HEADERS)
+
+.interp
+ *(.interp)
+
+.hash
+ *(.hash)
+
+.dynsym
+ *(.dynsym)
+
+.dynstr
+ *(.dynstr)
+
+.gnu.version
+ *(.gnu.version)
+
+.gnu.version_d
+ *(.gnu.version_d)
+
+.gnu.version_r
+ *(.gnu.version_r)
+
+.rel.init
+ *(.rel.init)
+
+.rela.init
+ *(.rela.init)
+
+.rel.text       0x0000000008048094        0x0
+ *(.rel.text .rel.text.* .rel.gnu.linkonce.t.*)
+ .rel.text      0x0000000000000000        0x0 arch/ia32/boot/start.o
+
+.rela.text
+ *(.rela.text .rela.text.* .rela.gnu.linkonce.t.*)
+
+.rel.fini
+ *(.rel.fini)
+
+.rela.fini
+ *(.rela.fini)
+
+.rel.rodata
+ *(.rel.rodata .rel.rodata.* .rel.gnu.linkonce.r.*)
+
+.rela.rodata
+ *(.rela.rodata .rela.rodata.* .rela.gnu.linkonce.r.*)
+
+.rel.data.rel.ro
+ *(.rel.data.rel.ro* .rel.gnu.linkonce.d.rel.ro.*)
+
+.rela.data.rel.ro
+ *(.rela.data.rel.ro* .rela.gnu.linkonce.d.rel.ro.*)
+
+.rel.data
+ *(.rel.data .rel.data.* .rel.gnu.linkonce.d.*)
+
+.rela.data
+ *(.rela.data .rela.data.* .rela.gnu.linkonce.d.*)
+
+.rel.tdata
+ *(.rel.tdata .rel.tdata.* .rel.gnu.linkonce.td.*)
+
+.rela.tdata
+ *(.rela.tdata .rela.tdata.* .rela.gnu.linkonce.td.*)
+
+.rel.tbss
+ *(.rel.tbss .rel.tbss.* .rel.gnu.linkonce.tb.*)
+
+.rela.tbss
+ *(.rela.tbss .rela.tbss.* .rela.gnu.linkonce.tb.*)
+
+.rel.ctors
+ *(.rel.ctors)
+
+.rela.ctors
+ *(.rela.ctors)
+
+.rel.dtors
+ *(.rel.dtors)
+
+.rela.dtors
+ *(.rela.dtors)
+
+.rel.got
+ *(.rel.got)
+
+.rela.got
+ *(.rela.got)
+
+.rel.bss
+ *(.rel.bss .rel.bss.* .rel.gnu.linkonce.b.*)
+
+.rela.bss
+ *(.rela.bss .rela.bss.* .rela.gnu.linkonce.b.*)
+
+.rel.plt
+ *(.rel.plt)
+
+.rela.plt
+ *(.rela.plt)
+
+.init
+ *(.init)
+
+.plt
+ *(.plt)
+
+.text           0x00000000c0030000     0x1dba
+ *(.text .stub .text.* .gnu.linkonce.t.*)
+ .text          0x00000000c0030000       0xc9 arch/ia32/boot/start.o
+                0x00000000c0030000                signature
+                0x00000000c0030004                checksum32
+                0x00000000c003000c                _start
+                0x00000000c0030008                kernel_size
+                0x00000000c0030070                ignore_int
+ *fill*         0x00000000c00300c9        0x3 90909090
+ .text          0x00000000c00300cc      0x227 arch/ia32/kernel/console.o
+                0x00000000c0030142                console_setchar
+                0x00000000c003015d                console_getchar
+                0x00000000c00300e3                console_init
+                0x00000000c00301bc                console_scroll
+                0x00000000c0030177                console_clear
+                0x00000000c00300cc                console_gotoxy
+                0x00000000c003024d                console_print
+                0x00000000c003010a                console_set_cursor
+ *fill*         0x00000000c00302f3        0x1 90909090
+ .text          0x00000000c00302f4       0x2e arch/ia32/kernel/cpuid.o
+                0x00000000c00302f4                get_processor_info
+ *fill*         0x00000000c0030322        0x2 90909090
+ .text          0x00000000c0030324      0x167 arch/ia32/kernel/exception.o
+                0x00000000c0030438                default_c_exception_handler
+                0x00000000c0030324                exception_init
+ *fill*         0x00000000c003048b        0x1 90909090
+ .text          0x00000000c003048c      0x137 arch/ia32/kernel/int.o
+                0x00000000c0030583                save_inthook
+                0x00000000c0030529                settss
+                0x00000000c00304f5                copy_gdt_entry
+                0x00000000c00304bc                hookint
+                0x00000000c003048c                restore_inthook
+ *fill*         0x00000000c00305c3        0x1 90909090
+ .text          0x00000000c00305c4      0x169 arch/ia32/kernel/inthandlers.o
+                0x00000000c003067e                int_keyb
+                0x00000000c00305c4                testint
+                0x00000000c00305e7                exception2
+                0x00000000c00305d4                exception0
+                0x00000000c003064e                exceptionc
+                0x00000000c0030666                exceptione
+                0x00000000c003062d                exception9
+                0x00000000c00306b2                schedule
+                0x00000000c0030722                exception_mem_page_fault
+                0x00000000c003060f                exception6
+                0x00000000c0030605                exception5
+                0x00000000c00305f1                exception3
+                0x00000000c0030641                exceptionb
+                0x00000000c0030623                exception8
+                0x00000000c0030637                exceptiona
+                0x00000000c0030619                exception7
+                0x00000000c00305dd                exception1
+                0x00000000c003065a                exceptiond
+                0x00000000c00305fb                exception4
+                0x00000000c0030672                exceptionf
+                0x00000000c00306ec                int_timer
+ *fill*         0x00000000c003072d        0x3 90909090
+ .text          0x00000000c0030730       0x2e arch/ia32/kernel/kdebug_s.o
+                0x00000000c0030738                kdebug_int_keyb
+                0x00000000c0030730                kdebug_int_timer
+ *fill*         0x00000000c003075e        0x2 90909090
+ .text          0x00000000c0030760       0xee arch/ia32/kernel/setup.o
+                0x00000000c0030760                inb
+                0x00000000c00307b8                setup_arch
+                0x00000000c003076a                testinthook
+ *fill*         0x00000000c003084e        0x2 90909090
+ .text          0x00000000c0030850       0x56 arch/ia32/kernel/shutdown.o
+                0x00000000c0030850                shutdown
+ *fill*         0x00000000c00308a6        0x2 90909090
+ .text          0x00000000c00308a8        0xf arch/ia32/kernel/syscall.o
+                0x00000000c00308a8                int_syscall
+ *fill*         0x00000000c00308b7        0x1 90909090
+ .text          0x00000000c00308b8        0x0 arch/ia32/lib/bios.o
+ *fill*         0x00000000c00308b8        0x8 90909090
+ .text          0x00000000c00308c0       0x4b arch/ia32/mm/paging.o
+                0x00000000c00308e0                linear_to_page
+                0x00000000c00308c0                page_to_linear
+ *fill*         0x00000000c003090b        0x1 90909090
+ .text          0x00000000c003090c      0x2bc kernel/main.o
+                0x00000000c003090c                keybhandler
+                0x00000000c0030949                panic
+                0x00000000c0030ada                start_kernel
+                0x00000000c0030a70                testmalloc
+ .text          0x00000000c0030bc8       0x99 kernel/ramdrive.o
+                0x00000000c0030bc8                ramdrive_loadall
+ *fill*         0x00000000c0030c61        0x3 90909090
+ .text          0x00000000c0030c64       0xfd kernel/vfs.o
+                0x00000000c0030c64                mount
+                0x00000000c0030c80                mount3
+                0x00000000c0030c72                umount
+ *fill*         0x00000000c0030d61        0x3 90909090
+ .text          0x00000000c0030d64        0x1 kernel/module.o
+                0x00000000c0030d64                module_init
+ *fill*         0x00000000c0030d65        0x3 90909090
+ .text          0x00000000c0030d68       0xf7 kernel/init.o
+                0x00000000c0030d92                ne2k
+                0x00000000c0030d68                write
+                0x00000000c0030d80                init
+ *fill*         0x00000000c0030e5f        0x1 90909090
+ .text          0x00000000c0030e60      0x2ba kernel/kdebug.o
+                0x00000000c0030ef1                kdebug_main
+                0x00000000c0030ea7                kdebug_keybhandler
+                0x00000000c0030e60                kdebug_getstr
+                0x00000000c003102b                kdebug
+ *fill*         0x00000000c003111a        0x2 90909090
+ .text          0x00000000c003111c       0x49 kernel/klog.o
+                0x00000000c003111c                klog
+ *fill*         0x00000000c0031165        0x3 90909090
+ .text          0x00000000c0031168       0x19 kernel/mutex.o
+                0x00000000c003117a                wait2
+                0x00000000c003116e                aquire_mutex
+                0x00000000c0031168                wait
+                0x00000000c0031180                signal
+                0x00000000c0031174                wait_no_aquire
+ *fill*         0x00000000c0031181        0x3 90909090
+ .text          0x00000000c0031184      0x188 kernel/symbols.o
+                0x00000000c0031184                loadsymbols
+ .text          0x00000000c003130c      0x133 kernel/syscall.o
+                0x00000000c00313c0                sys_close
+                0x00000000c0031350                sys_setpriority
+                0x00000000c0031396                sys_umask
+                0x00000000c003130c                syscall
+                0x00000000c003136c                sys_time
+                0x00000000c00313b2                sys_create
+                0x00000000c003130d                sys_read
+                0x00000000c003135e                sys_getpriority
+                0x00000000c0031334                sys_chmod
+                0x00000000c00313cf                sys_getdomainname
+                0x00000000c00313ea                sys_gethostname
+                0x00000000c00313a4                sys_open
+                0x00000000c0031342                sys_chown
+                0x00000000c0031405                sys_write
+                0x00000000c00313ce                sys_uname
+                0x00000000c003137a                sys_sethostname
+                0x00000000c0031326                sys_shutdown
+                0x00000000c0031388                sys_setdomainname
+ *fill*         0x00000000c003143f        0x1 90909090
+ .text          0x00000000c0031440      0x14f kernel/timer.o
+                0x00000000c003157e                task0
+                0x00000000c0031563                timer_init
+                0x00000000c0031440                next_process
+                0x00000000c0031482                create_free_process
+ *fill*         0x00000000c003158f        0x1 90909090
+ .text          0x00000000c0031590        0xd lib/ctype.o
+                0x00000000c0031590                tolower
+ *fill*         0x00000000c003159d        0x3 90909090
+ .text          0x00000000c00315a0       0x4c lib/errno.o
+                0x00000000c00315a0                strerror
+ .text          0x00000000c00315ec       0xb3 lib/stdio.o
+                0x00000000c00315ec                snprintf
+                0x00000000c003160d                printk
+                0x00000000c003165d                printd
+ *fill*         0x00000000c003169f        0x1 90909090
+ .text          0x00000000c00316a0      0x13d lib/string.o
+                0x00000000c003178b                memsetw
+                0x00000000c00317a7                strndup
+                0x00000000c0031740                memcpy
+                0x00000000c00316cd                strnlen
+                0x00000000c00316e8                strncmp
+                0x00000000c003171d                strncpy
+                0x00000000c0031770                memset
+                0x00000000c00316be                strlen
+                0x00000000c00316a0                strchr
+ *fill*         0x00000000c00317dd        0x3 90909090
+ .text          0x00000000c00317e0       0x33 lib/checksum.o
+                0x00000000c00317e0                checksum16
+ *fill*         0x00000000c0031813        0x1 90909090
+ .text          0x00000000c0031814      0x188 lib/vsnprintf.o
+                0x00000000c0031814                vsnprintf
+ *fill*         0x00000000c003199c        0x4 90909090
+ .text          0x00000000c00319a0       0x25 mm/mm.o
+                0x00000000c00319b0                munmap
+                0x00000000c00319a0                mmap
+                0x00000000c00319c0                vm_init
+ *fill*         0x00000000c00319c5        0xb 90909090
+ .text          0x00000000c00319d0      0x3ea mm/kmm.o
+                0x00000000c0031c10                km_init
+                0x00000000c0031a80                kfree
+                0x00000000c00319d0                km_allocate
+                0x00000000c0031b20                kfree2
+                0x00000000c0031a50                unallocateblock
+                0x00000000c0031ba0                km_getblock
+                0x00000000c0031ca0                kmalloc
+ *(.text.*personality*)
+ *(.gnu.warning)
+
+.fini
+ *(.fini)
+                0x00000000c0031dba                PROVIDE (__etext, .)
+                0x00000000c0031dba                PROVIDE (_etext, .)
+                0x00000000c0031dba                PROVIDE (etext, .)
+
+.rodata         0x00000000c0031dbc      0x9b8
+ *(.rodata .rodata.* .gnu.linkonce.r.*)
+ .rodata.str1.1
+                0x00000000c0031dbc       0x3a arch/ia32/kernel/cpuid.o
+ .rodata.str1.1
+                0x00000000c0031df6      0x22e arch/ia32/kernel/exception.o
+ .rodata.str1.1
+                0x00000000c0032024       0x13 arch/ia32/kernel/int.o
+ .rodata.str1.1
+                0x00000000c0032037       0x92 arch/ia32/kernel/setup.o
+ .rodata.str1.1
+                0x00000000c00320c9       0x42 arch/ia32/kernel/shutdown.o
+ .rodata.str1.1
+                0x00000000c003210b      0x23b kernel/main.o
+                                        0x24c (size before relaxing)
+ .rodata.str1.1
+                0x00000000c0032346       0x6d kernel/ramdrive.o
+                                         0x78 (size before relaxing)
+ .rodata.str1.1
+                0x00000000c00323b3       0x91 kernel/vfs.o
+ .rodata.str1.1
+                0x00000000c0032444       0x41 kernel/init.o
+ .rodata.str1.1
+                0x00000000c0032485       0xf6 kernel/kdebug.o
+                                         0xfa (size before relaxing)
+ .rodata.str1.1
+                0x00000000c003257b        0x8 kernel/klog.o
+ .rodata.str1.1
+                0x00000000c0032583       0x7d kernel/symbols.o
+ .rodata.str1.1
+                0x00000000c0032600        0xe kernel/syscall.o
+                                         0x11 (size before relaxing)
+ .rodata.str1.1
+                0x00000000c003260e       0x2c kernel/timer.o
+ .rodata.str1.1
+                0x00000000c003263a       0x9d lib/errno.o
+ .rodata.str1.1
+                0x00000000c00326d7       0x29 lib/vsnprintf.o
+ .rodata.str1.1
+                0x00000000c0032700       0x54 mm/kmm.o
+ .rodata.str1.4
+                0x00000000c0032754       0x20 mm/kmm.o
+                                         0x1f (size before relaxing)
+
+.rodata1
+ *(.rodata1)
+
+.eh_frame_hdr
+ *(.eh_frame_hdr)
+
+.eh_frame
+ *(.eh_frame)
+
+.gcc_except_table
+ *(.gcc_except_table .gcc_except_table.*)
+                0x00000000c0032774                . = .
+
+.eh_frame
+ *(.eh_frame)
+
+.gcc_except_table
+ *(.gcc_except_table .gcc_except_table.*)
+
+.tdata
+ *(.tdata .tdata.* .gnu.linkonce.td.*)
+
+.tbss
+ *(.tbss .tbss.* .gnu.linkonce.tb.*)
+ *(.tcommon)
+
+.preinit_array  0x00000000c0032774        0x0
+                0x00000000c0032774                PROVIDE (__preinit_array_start, .)
+ *(.preinit_array)
+                0x00000000c0032774                PROVIDE (__preinit_array_end, .)
+
+.init_array     0x00000000c0032774        0x0
+                0x00000000c0032774                PROVIDE (__init_array_start, .)
+ *(SORT(.init_array.*))
+ *(.init_array)
+                0x00000000c0032774                PROVIDE (__init_array_end, .)
+
+.fini_array     0x00000000c0032774        0x0
+                0x00000000c0032774                PROVIDE (__fini_array_start, .)
+ *(.fini_array)
+ *(SORT(.fini_array.*))
+                0x00000000c0032774                PROVIDE (__fini_array_end, .)
+
+.ctors
+ *crtbegin*.o(.ctors)
+ *(EXCLUDE_FILE(*crtend*.o) .ctors)
+ *(SORT(.ctors.*))
+ *(.ctors)
+
+.dtors
+ *crtbegin*.o(.dtors)
+ *(EXCLUDE_FILE(*crtend*.o) .dtors)
+ *(SORT(.dtors.*))
+ *(.dtors)
+
+.jcr
+ *(.jcr)
+
+.data.rel.ro
+ *(.data.rel.ro.local* .gnu.linkonce.d.rel.ro.local.*)
+ *(.data.rel.ro* .gnu.linkonce.d.rel.ro.*)
+
+.dynamic
+ *(.dynamic)
+
+.got
+ *(.got)
+
+.got.plt
+ *(.got.plt)
+
+.data           0x00000000c0032780      0x180
+ *(.data .data.* .gnu.linkonce.d.*)
+ .data          0x00000000c0032780       0x4d arch/ia32/boot/start.o
+ *fill*         0x00000000c00327cd        0x3 00
+ .data          0x00000000c00327d0        0x0 arch/ia32/kernel/console.o
+ .data          0x00000000c00327d0        0x0 arch/ia32/kernel/cpuid.o
+ *fill*         0x00000000c00327d0       0x10 00
+ .data          0x00000000c00327e0       0x80 arch/ia32/kernel/exception.o
+                0x00000000c00327e0                exception_name
+ .data          0x00000000c0032860        0x0 arch/ia32/kernel/int.o
+ .data          0x00000000c0032860        0x0 arch/ia32/kernel/inthandlers.o
+ .data          0x00000000c0032860        0x0 arch/ia32/kernel/kdebug_s.o
+ .data          0x00000000c0032860        0x0 arch/ia32/kernel/setup.o
+ .data          0x00000000c0032860        0x0 arch/ia32/kernel/shutdown.o
+ .data          0x00000000c0032860        0x0 arch/ia32/kernel/syscall.o
+ .data          0x00000000c0032860        0x0 arch/ia32/lib/bios.o
+ .data          0x00000000c0032860        0x0 arch/ia32/mm/paging.o
+ .data          0x00000000c0032860        0x4 kernel/main.o
+                0x00000000c0032860                enable_kdebug
+ .data          0x00000000c0032864        0x0 kernel/ramdrive.o
+ .data          0x00000000c0032864        0x0 kernel/vfs.o
+ .data          0x00000000c0032864        0x0 kernel/module.o
+ .data          0x00000000c0032864        0x0 kernel/init.o
+ *fill*         0x00000000c0032864       0x1c 00
+ .data          0x00000000c0032880       0x80 kernel/kdebug.o
+                0x00000000c0032880                ASCIINames
+ .data          0x00000000c0032900        0x0 kernel/klog.o
+ .data          0x00000000c0032900        0x0 kernel/mutex.o
+ .data          0x00000000c0032900        0x0 kernel/symbols.o
+ .data          0x00000000c0032900        0x0 kernel/syscall.o
+ .data          0x00000000c0032900        0x0 kernel/timer.o
+ .data          0x00000000c0032900        0x0 lib/ctype.o
+ .data          0x00000000c0032900        0x0 lib/errno.o
+ .data          0x00000000c0032900        0x0 lib/stdio.o
+ .data          0x00000000c0032900        0x0 lib/string.o
+ .data          0x00000000c0032900        0x0 lib/checksum.o
+ .data          0x00000000c0032900        0x0 lib/vsnprintf.o
+ .data          0x00000000c0032900        0x0 mm/mm.o
+ .data          0x00000000c0032900        0x0 mm/kmm.o
+ *(.gnu.linkonce.d.*personality*)
+
+.data1
+ *(.data1)
+                0x00000000c0032900                _edata = .
+                0x00000000c0032900                PROVIDE (edata, .)
+                0x00000000c0032900                __bss_start = .
+
+.bss            0x00000000c0032900      0xec8
+ *(.dynbss)
+ *(.bss .bss.* .gnu.linkonce.b.*)
+ .bss           0x00000000c0032900        0x0 arch/ia32/kernel/console.o
+ .bss           0x00000000c0032900        0x0 arch/ia32/kernel/cpuid.o
+ .bss           0x00000000c0032900        0x0 arch/ia32/kernel/exception.o
+ .bss           0x00000000c0032900        0x0 arch/ia32/kernel/int.o
+ .bss           0x00000000c0032900        0x0 arch/ia32/kernel/inthandlers.o
+ .bss           0x00000000c0032900        0x0 arch/ia32/kernel/kdebug_s.o
+ .bss           0x00000000c0032900        0x1 arch/ia32/kernel/setup.o
+                0x00000000c0032900                got_pagefault
+ *fill*         0x00000000c0032901        0x3 00
+ .bss           0x00000000c0032904        0x0 arch/ia32/kernel/shutdown.o
+ .bss           0x00000000c0032904        0x0 arch/ia32/kernel/syscall.o
+ .bss           0x00000000c0032904        0x0 arch/ia32/lib/bios.o
+ .bss           0x00000000c0032904        0x0 arch/ia32/mm/paging.o
+ .bss           0x00000000c0032904       0x14 kernel/main.o
+                0x00000000c0032910                keyb_in_ptr
+                0x00000000c003290c                multitask
+                0x00000000c0032904                text_height
+                0x00000000c003290a                text_Bpp
+                0x00000000c0032914                keyb_out_ptr
+                0x00000000c0032906                text_width
+                0x00000000c0032908                text_pos
+ .bss           0x00000000c0032918        0x0 kernel/ramdrive.o
+ .bss           0x00000000c0032918        0x0 kernel/vfs.o
+ .bss           0x00000000c0032918        0x0 kernel/module.o
+ .bss           0x00000000c0032918        0x0 kernel/init.o
+ .bss           0x00000000c0032918        0x8 kernel/kdebug.o
+                0x00000000c0032918                lastbyte
+ .bss           0x00000000c0032920        0x0 kernel/klog.o
+ .bss           0x00000000c0032920        0x0 kernel/mutex.o
+ .bss           0x00000000c0032920        0x0 kernel/symbols.o
+ .bss           0x00000000c0032920        0x0 kernel/syscall.o
+ .bss           0x00000000c0032920        0xc kernel/timer.o
+                0x00000000c0032920                curtask
+                0x00000000c0032924                inited
+ .bss           0x00000000c003292c        0x0 lib/ctype.o
+ .bss           0x00000000c003292c        0x4 lib/errno.o
+                0x00000000c003292c                errno
+ .bss           0x00000000c0032930        0x0 lib/stdio.o
+ .bss           0x00000000c0032930        0x0 lib/string.o
+ .bss           0x00000000c0032930        0x0 lib/checksum.o
+ .bss           0x00000000c0032930        0x0 lib/vsnprintf.o
+ .bss           0x00000000c0032930        0x0 mm/mm.o
+ .bss           0x00000000c0032930       0x1c mm/kmm.o
+                0x00000000c0032930                km_unallocated_block_count
+ *(COMMON)
+ *fill*         0x00000000c003294c       0x14 00
+ COMMON         0x00000000c0032960      0x178 kernel/main.o
+                0x00000000c0032960                fs_ramdrive
+                0x00000000c00329c0                keyb_buffer
+                0x00000000c0032ac0                kernel_symbols
+ COMMON         0x00000000c0032ad8        0xc kernel/kdebug.o
+                0x00000000c0032ad8                kdebug_pos
+                0x00000000c0032adc                kdebug_kbdone
+                0x00000000c0032ae0                kdebug_kbbuf
+ *fill*         0x00000000c0032ae4       0x1c 00
+ COMMON         0x00000000c0032b00      0x290 kernel/timer.o
+                0x00000000c0032b00                tasks
+                0x00000000c0032ba0                processlist
+                0x00000000c0032d60                nullprocess
+                0x00000000c0032d8c                processcount
+ *fill*         0x00000000c0032d90       0x10 00
+ COMMON         0x00000000c0032da0      0xa28 mm/kmm.o
+                0x00000000c0032da0                km_unallocated_blocks
+                0x00000000c0032dc0                km_hashtable
+                0x00000000c00337c0                km_free_blocks_mutex
+                0x00000000c00337c4                km_hashtable_mutex
+                0x00000000c00337c8                . = ALIGN ((. != 0x0)?0x4:0x1)
+                0x00000000c00337c8                . = ALIGN (0x4)
+                0x00000000c00337c8                . = ALIGN (0x4)
+                0x00000000c00337c8                _end = .
+                0x00000000c00337c8                PROVIDE (end, .)
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment        0x0000000000000000      0x63d
+ *(.comment)
+ .comment       0x0000000000000000       0x1f arch/ia32/boot/start.o
+ .comment       0x000000000000001f       0x3a arch/ia32/kernel/console.o
+ .comment       0x0000000000000059       0x3a arch/ia32/kernel/cpuid.o
+ .comment       0x0000000000000093       0x3a arch/ia32/kernel/exception.o
+ .comment       0x00000000000000cd       0x3a arch/ia32/kernel/int.o
+ .comment       0x0000000000000107       0x3a arch/ia32/kernel/setup.o
+ .comment       0x0000000000000141       0x3a arch/ia32/kernel/shutdown.o
+ .comment       0x000000000000017b       0x3a arch/ia32/lib/bios.o
+ .comment       0x00000000000001b5       0x3a arch/ia32/mm/paging.o
+ .comment       0x00000000000001ef       0x3a kernel/main.o
+ .comment       0x0000000000000229       0x3a kernel/ramdrive.o
+ .comment       0x0000000000000263       0x3a kernel/vfs.o
+ .comment       0x000000000000029d       0x3a kernel/module.o
+ .comment       0x00000000000002d7       0x3a kernel/init.o
+ .comment       0x0000000000000311       0x3a kernel/kdebug.o
+ .comment       0x000000000000034b       0x3a kernel/klog.o
+ .comment       0x0000000000000385       0x3a kernel/mutex.o
+ .comment       0x00000000000003bf       0x3a kernel/symbols.o
+ .comment       0x00000000000003f9       0x3a kernel/syscall.o
+ .comment       0x0000000000000433       0x3a kernel/timer.o
+ .comment       0x000000000000046d       0x3a lib/ctype.o
+ .comment       0x00000000000004a7       0x3a lib/errno.o
+ .comment       0x00000000000004e1       0x3a lib/stdio.o
+ .comment       0x000000000000051b       0x3a lib/string.o
+ .comment       0x0000000000000555       0x3a lib/checksum.o
+ .comment       0x000000000000058f       0x3a lib/vsnprintf.o
+ .comment       0x00000000000005c9       0x3a mm/mm.o
+ .comment       0x0000000000000603       0x3a mm/kmm.o
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges
+ *(.debug_aranges)
+
+.debug_pubnames
+ *(.debug_pubnames)
+
+.debug_info
+ *(.debug_info .gnu.linkonce.wi.*)
+
+.debug_abbrev
+ *(.debug_abbrev)
+
+.debug_line
+ *(.debug_line)
+
+.debug_frame
+ *(.debug_frame)
+
+.debug_str
+ *(.debug_str)
+
+.debug_loc
+ *(.debug_loc)
+
+.debug_macinfo
+ *(.debug_macinfo)
+
+.debug_weaknames
+ *(.debug_weaknames)
+
+.debug_funcnames
+ *(.debug_funcnames)
+
+.debug_typenames
+ *(.debug_typenames)
+
+.debug_varnames
+ *(.debug_varnames)
+
+/DISCARD/
+ *(.note.GNU-stack)
+OUTPUT(vmkeffos elf32-i386)

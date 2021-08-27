@@ -1,0 +1,9 @@
+/* $Id: magic.h,v 1.2 2001/05/31 21:32:21 marvin Exp $
+ */
+#define IPC_MAGIC        0x12345678
+#define NET_DRIVER_MAGIC 0x87654321
+#define FS_DRIVER_MAGIC  0x48615314
+#define BD_DRIVER_MAGIC  0x56431548
+#define CD_DRIVER_MAGIC  0x10454862
+#define PROCESS_MAGIC    0x10485760
+#define INODE_MAGIC      0xDEADBEEF

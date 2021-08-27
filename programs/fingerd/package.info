@@ -1,0 +1,11 @@
+name fingerd
+version 1.0
+author Thomas Habets <thomas@habets.pp.se
+make fingerd
+install 700 fingerd /usr/sbin/fingerd
+install 600 /etc/fingerd/header
+install 600 /etc/fingerd/footer
+install 600 /etc/fingerd/fingerd.conf
+info
+Finger daemon.
+.

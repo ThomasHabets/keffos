@@ -1,0 +1,31 @@
+$Id: boot.txt,v 1.2 2001/05/31 21:32:20 marvin Exp $
+
+
+arch/boot/boot.{asm,s}		# boot sector
+	* move self elsewhere
+	* print "Bootloader %d.%d\n\nboot> "
+	* get boot dev and parameters
+	* print "Loading kernel loader..."
+	* load first sector of loader
+	* load sectorcount sectors of kloader
+	* jmp to loader
+arch/boot/loader.{asm,s}	# second stage loader
+	* check good enough processor
+	* check mem & equip and store
+	* load kernel & ramdrive
+	* prepare processor for kernel mode (like pmode and paging)
+	* jmp to kernel
+arch/boot/start.{asm,s}		# kernel asm
+	* Do some low-level stuff in asm before entering
+	  C. (read: set up IDTs and stuff)
+	* jmp to start_kernel()
+kernel/main.c			# kernel C
+	* init stuff like mm
+	* load initial modules from ramdrive
+	 * console
+	 * keyboard
+	 * root disksys
+	 * root filesys
+	 * cpuid
+	* mount real root filesys
+	* run /sbin/init

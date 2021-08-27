@@ -1,0 +1,25 @@
+#
+# Thomas Habets         1999-10-20 (0.0.1)      Added this comment
+#
+
+dentry
+	typedef dentry_t
+	A cached inode, not saved on disc ever.
+
+file
+	typedef file_t
+	A pointer to an inode. file_t contains no attributed at all, just
+	the inode pointer.
+
+inode
+	typedef inode_t
+	Data locator, permissions and ownership.
+
+ttl
+	Time To Live
+	Time (or, in the case of ipv4, hops) before this data it is assigned
+	to should change state.
+	Example:
+	* IP packets should survive <n> hops before being discarded
+	* Memory block should be in state FREE <n> seconds before being
+	  unallocated.

@@ -1,0 +1,64 @@
+$Id: proc.txt,v 1.2 2001/05/31 21:32:20 marvin Exp $
+
+Writeble files are in /proc/sysctl
+
+/proc/:
+cmdline		kernel parameters
+cpuinfo		text info about processor
+filesystems	file systems availible
+interrupts	interrupts in use
+ioports		ioports in use
+kcore		phys mem
+ksyms		System.map
+meminfo		raw mem stat
+modules		modules loaded & deps
+mounts		mounted filesystems
+partitions	detected partitions
+self -> <pid>/	point to pid dir
+
+/proc/<pid>/:
+cmdline		cmdline
+cwd -> /foo	cwd
+environ		environ
+fd/		fd:s
+mem		memory
+root -> /	root dir
+stat		raw stats
+status		text status
+
+/proc/block/<block-device>/:
+info		info about drive
+
+/proc/net/:
+raw		bytes of data through net
+<proto or interface>/raw	       same as above
+
+/proc/net/ipv4/:
+raw		bytes of data through ip
+tcp_raw		----------||--------- tcp
+udp_raw		----------||--------- udp
+
+/proc/net/ipv4/listen/:
+tcp<n>		Info about tcp socket in LISTEN mode (pid, user, backlog)
+udp<n>		Info about udp socket in LISTEN mode (pid, user, backlog)
+
+
+/proc/net/<dev>/:
+raw		bytes of raw data through <dev>
+info		text data about device
+interface	"<interface-name> <protocol> ... protocol specific stuff ... "
+
+/proc/sysctl/net/ipv4/:
+icmp_echo_ignore_all			0	ignore icmp echo
+icmp_echo_ignore_broadcast		0	ignore broadcast ping
+ip_forward				0	forward
+ip_local_port_range		1024 4999	range of outports
+ip_forward_defrag			0	defrag all ip packets before forward
+ip_fragtime			       30	secs to keep incomplete packets
+tcp_syncookie			        0	0 = no, 1 = yes, 2 = on flood
+tcp_window_scaling			1	recommended windowsize * <this-value>
+udp_icmp_port_unreachable		0	send port unreachable for non-listen
+
+/proc/sysctl/net/ipv4/listen/:
+tcp<n>					x	backlog for port <n>
+udp<n>					x	backlog for port <n>

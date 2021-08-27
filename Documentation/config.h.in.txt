@@ -1,0 +1,33 @@
+#
+# Thomas Habets         1999-10-20 (0.0.1)      Added this comment
+#
+Specs for new config.h.in files.
+
+Not even working yet.
+
+Config program is in tools/config2.c, fix it.
+
+---------------------------------------------------------------------------
+    Infile:
+---------------
+# comment
+section <section>
+str "text" <num> <fnutts> NAME <default_value> "Help text"
+if NAME [ = <value> ]
+fi
+elif NAME [ = <value> ]
+bool "text" NAME <y_or_n> "help text"
+int "text" <from> <to> NAME <default> "Help text"
+choice "text" "Choice1|Choice2|Choice3" NAME <default> "help text"
+
+----------------------------------------------------------------------------
+    Outfile:
+----------------
+/*
+ * Keep you ugly paws OFF!
+ */
+#ifndef __INCLUDE_RELATIVE_PATH_TO_CONFIG_H__
+#define __INCLUDE_RELATIVE_PATH_TO_CONFIG_H__
+#define NAME <value>
+#define NAME <value>
+#endif

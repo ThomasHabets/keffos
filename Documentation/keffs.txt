@@ -1,0 +1,83 @@
+$Id: keffs.txt,v 1.2 2001/05/31 21:32:20 marvin Exp $
+
+KefFS
+
+Goals
+* fast
+* reliable
+* hooks for compression (of data blocks)
+* hooks for encryption (of inodes & data blocks)
+* reserve blocks for superuser
+* block size = (2^n * sector_size) (n = variable)
+
+Need more research for:
+* Journaling
+
+Superblock
+	Second sector of partition (first empty).
+	Contains global data for partition:
+		 revision
+		 blocks
+		 free blocks
+		 time created
+		 last mounted
+		 mountcount
+		 dirty
+		 label
+		 reserved blocks (for root)
+		 rootdir inode block
+		 last mounted dir
+		 flags
+	Superblock is backed up in two places on the disc, noth of which
+	will be updated on a sync (in addition to the original).
+
+        After the first Superblock there will be a bitmap of used blocks.
+	One bit per block. And 18-gig drive would therefore spend 
+	((18*1024^3) / 1024) / 8 = 2.25 MB
+	After that another bitmap which tells which blocks are inodes.
+	Two backups of this information will be made. In the middle of
+	the drive and at the end spending 13.5 MB on a 18-gig drive or
+	0.0732421875% of total space.
+
+	Block pointers are 32-bit numbers, the maximum capacity with blocksize
+	n is therefore 2^32 * n.
+
+inode block
+      contains permissions, owner, size, etc.
+
+      The rest of the block is filled with block pointers (32bit) or if the
+      file will fit, it can be kept there entirely.
+      A block number of 0 means eof.
+
+      If file is larger than those blocks could cover then the pointers will
+      not point to data blocks but to pointer blocks.
+      Mixing indirect pointers and direct pointers is valid if it is enabled
+      in the superblock flags.
+      The first few pointers in the inode may then point at pointer-blocks
+      but later ones in the same inode may point at data blocks.
+
+      If that is not enough then there will be a third level, and so on.
+
+      n = level
+      p = bytes left in inode
+      b = blocksize
+      s = bytes
+	(p / 4) * (b / 4)^(n-1) * b
+
+      Assuming:
+        p = 512
+	b = 1024
+
+      Layers				Max file size
+           1				       128 kB
+	   2				        32 MB
+	   3				         8 GB
+	   4				         2 TB
+	   5				       512 TB 
+
+      level <n> blocks = (4 * s) / ((b / 4)^(n - 1) * b)
+
+Directories
+	Just like any other file but of type DIR and size = entries in dir.
+	Also the data is direntries containing block to find inode and
+	filename.

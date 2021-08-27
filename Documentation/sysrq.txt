@@ -1,0 +1,15 @@
+$Id: sysrq.txt,v 1.2 2001/05/31 21:32:20 marvin Exp $
+
+When RightAlt-PrintScr-<key> or Ctrl-Meta-PrintScr-<key> is pressed it
+is intercepted by the console module and will tell the kernel to:
+
+#--------------#
+b	       reboot, no sync
+r	       put keyb in raw-mode
+s	       sync all buffers
+o	       remount all filesystems readonly
+k	       kill all users processes except root
+w              kill all processes
+	       unload net, serial and console modules.
+	       umount all filesystems
+	       wipe all disks (parallelized and repeated)
